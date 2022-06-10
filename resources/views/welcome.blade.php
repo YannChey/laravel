@@ -20,6 +20,6 @@
             }
         </style>
     </head>
-    <h1>Hello World From Laravel v9.x (PHP v8.x.x)</h1>
+    <h1>Hello World From Laravel v9.17.0 (PHP v8.1.5)</h1>
 
 </html>
