@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,22 +16,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-   return 'Homepage';
-    //return view('welcome');
-});
+//Route::get('/', function () {
+//   return 'Homepage';
+//    //return view('welcome');
+//});
 
-Route::get('/product', function () {
-    return 'Liste des produits';
-});
+Route::get('/',[HomeController::class,'start']);
 
-Route::get('/product/{id}', function (int $id) {
-    return 'Fiche du produit '. $id;
-});
+//Route::get('/product', function () {
+//    return 'Liste des produits';
+//});
 
-Route::get('/cart', function () {
-    return 'Panier';
-});
+Route::get('/product',[ProductController::class,'product']);
+
+//Route::get('/product/{id}', function (int $id) {
+//    return 'Fiche du produit '. $id;
+//});
+
+Route::get('/product/{id}', [ProductController::class,'id']);
+
+//Route::get('/cart', function () {
+//    return 'Panier';
+//});
+
+Route::get('/cart', [CartController::class,'cart']);
 
 //Redirect::action('PageController@about');
 //Config::get('app.aliases.Cookie');
