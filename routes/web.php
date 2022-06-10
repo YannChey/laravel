@@ -14,15 +14,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return 'Homepage';
+   return 'Homepage';
+    //return view('welcome');
 });
 
 Route::get('/product', function () {
     return 'Liste des produits';
 });
 
-Route::get('/product/{id}', function () {
-    return 'Fiche du produit';
+Route::get('/product/{id}', function (int $id) {
+    return 'Fiche du produit '. $id;
 });
 
 Route::get('/cart', function () {
@@ -31,3 +32,4 @@ Route::get('/cart', function () {
 
 //Redirect::action('PageController@about');
 //Config::get('app.aliases.Cookie');
+
