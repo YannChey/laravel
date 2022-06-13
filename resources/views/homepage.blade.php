@@ -1,8 +1,7 @@
-@include('welcome')
+@include('layout')
 
+<h1>Singerie</h1>
 
-<h1>yuytuytu</h1>
-</body>
 
 
 
