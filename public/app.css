@@ -1,82 +1,83 @@
-*{
-    margin:0;
-    padding:0;
-}
-
-.row > *{
+* {
+    margin: 0;
     padding: 0;
 }
 
-.main{
-    display:flex;
-    margin:auto;
+.row > * {
+    padding: 0;
+}
+
+.main {
+    display: flex;
+    margin: auto;
     text-align: center;
     flex-direction: row;
     padding: 10px;
     justify-content: center;
-    margin-top:50px;
+    margin-top: 50px;
 }
 
-.row{
-    margin:0px;
+.row {
+    margin: 0px;
 }
 
-.commander{
+.commander {
     text-align: center;
 }
 
-img{
+img {
     margin-bottom: 10px;
-    height:400px;
+    height: 400px;
+    width: 500px;
 
 }
 
-.prix_av_remise{
-    color:red;
+.prix_av_remise {
+    color: red;
     text-decoration: line-through;
-    margin-right:10px;
+    margin-right: 10px;
 }
 
-.prix_av_remise_entire{
+.prix_av_remise_entire {
 
 }
 
-.pourcent_remise{
-    color:red;
+.pourcent_remise {
+    color: red;
 }
 
-.texte{
+.texte {
     text-align: center;
-    margin-left:20px;
+    margin-left: 20px;
     font-size: 20px;
 }
 
-.commander{
+.commander {
     text-align: center;
 }
 
-table{
-    margin:50px;
+table {
+    margin: 50px;
 }
 
-td{
-    width:300px;
-    height:50px;
-    border-top:1px solid black;
+td {
+    width: 300px;
+    height: 50px;
+    border-top: 1px solid black;
     font-size: 20px;
     padding: 10px;
 }
 
-.ancienPrix{
-    color:red;
+.ancienPrix {
+    color: red;
     margin-bottom: 10px;
     text-decoration: line-through;
     font-size: 13px;
 }
 
-input, select{
+input, select {
     font-size: 20px;
-    padding:5px;
+    padding: 5px;
     margin-bottom: 3px;
     background-color: rgba(220, 115, 115, 0.58);
 }
