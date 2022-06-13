@@ -27,7 +27,7 @@ Route::get('/',[HomeController::class,'start']);
 //    return 'Liste des produits';
 //});
 
-Route::get('/product',[ProductController::class,'product']);
+Route::get('/product',[ProductController::class,'products']);
 
 //Route::get('/product/{id}', function (int $id) {
 //    return 'Fiche du produit '. $id;
@@ -43,4 +43,3 @@ Route::get('/cart', [CartController::class,'cart']);
 
 //Redirect::action('PageController@about');
 //Config::get('app.aliases.Cookie');
-
