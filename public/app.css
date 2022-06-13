@@ -1,0 +1,80 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+.row > *{
+    padding: 0;
+}
+
+.main{
+    margin: auto;
+    text-align: center;
+    padding:0px;
+}
+
+.entire{
+}
+
+.row{
+    margin:0px;
+}
+
+.commander{
+    text-align: center;
+}
+
+img{
+    margin-bottom: 10px;
+    height:400px;
+
+}
+
+.prix_av_remise{
+    color:red;
+    text-decoration: line-through;
+    margin-right:10px;
+}
+
+.prix_av_remise_entire{
+
+}
+
+.pourcent_remise{
+    color:red;
+}
+
+.texte{
+    text-align: center;
+    font-size: 20px;
+}
+
+.commander{
+    text-align: center;
+}
+
+table{
+    margin:50px;
+}
+
+td{
+    width:300px;
+    height:50px;
+    border-top:1px solid black;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.ancienPrix{
+    color:red;
+    margin-bottom: 10px;
+    text-decoration: line-through;
+    font-size: 13px;
+}
+
+input, select{
+    font-size: 20px;
+    padding:5px;
+    margin-bottom: 3px;
+    background-color: rgba(220, 115, 115, 0.58);
+}
