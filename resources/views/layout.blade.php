@@ -11,9 +11,6 @@
     <link rel="stylesheet" href="/app.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <!-- Styles -->
-    <link href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1524180/codepen-template-1.0.css" rel="stylesheet" />
-    <!-- Scripts -->
 
 
 
