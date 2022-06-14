@@ -1,4 +1,4 @@
-@include('layout')
+@extends('layout')
 
 <div class="texte">
     <h1>Singerie</h1>
