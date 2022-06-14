@@ -93,3 +93,34 @@ input, select{
     margin-bottom: 3px;
     background-color: rgba(220, 115, 115, 0.58);
 }
+
+.logo{
+    max-height: 150px;
+    margin-right:100px;
+}
+
+.container{
+    justify-content: space-between;
+}
+
+a.nav-link{
+    color:white;
+}
+
+a.nav-link:hover{
+    color:orange;
+}
+
+ul.navbar-nav{
+justify-content: space-between;
+}
+
+button.btn{
+    border-color:orange;
+    color:orange;
+}
+
+button.btn:hover{
+    border-color:orange;
+    background-color:orange;
+}

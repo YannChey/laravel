@@ -14,7 +14,7 @@ img.onload = init;
 var bmp = new createjs.Bitmap(img);
 handleResize();
 
-var MAX_BANANAS = 200;
+var MAX_BANANAS = 500;
 
 var bananas = [];
 
