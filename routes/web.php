@@ -28,6 +28,8 @@ Route::get('/',[HomeController::class,'start']);
 //});
 
 Route::get('/product',[ProductController::class,'products']);
+Route::get('/productName',[ProductController::class,'productsSortByName']);
+Route::get('/productPrice',[ProductController::class,'productsSortByPrice']);
 
 //Route::get('/product/{id}', function (int $id) {
 //    return 'Fiche du produit '. $id;
