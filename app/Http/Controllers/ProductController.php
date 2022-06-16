@@ -43,6 +43,7 @@ class ProductController extends Controller
 
     public function productsSortByName()
     {
+//        $products=Product::orderBy('name')->get();
         $products=Product::all()->sortBy('name');
         return view('product-list',['products' => $products]);
     }
@@ -53,9 +54,9 @@ class ProductController extends Controller
         return view('product-list',['products' => $products]);
     }
 
-    public function id(int $key)
+    public function show(Product $product)
     {
-        $product=Product::all();
-        return view('product-details', ['product' => $product[$key]]);
+            return view('product-details', ['product' => $product]);
     }
+
 }

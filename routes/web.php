@@ -36,7 +36,7 @@ Route::get('/productPrice',[ProductController::class,'productsSortByPrice']);
 //    return 'Fiche du produit '. $id;
 //});
 
-Route::get('/product/{key}', [ProductController::class,'id']);
+Route::get('/product/{product}', [ProductController::class,'show']);
 
 //Route::get('/cart', function () {
 //    return 'Panier';
@@ -48,3 +48,7 @@ Route::get('/cart', [CartController::class,'cart']);
 //Config::get('app.aliases.Cookie');
 
 Route::get('/backoffice', [BackOfficeController::class,'backoffice']);
+Route::get('/backoffice/create', [BackOfficeController::class,'create']);
+Route::get('/backoffice/product/{id}/edit', [BackOfficeController::class,'backofficeproductedit']);
+//Route::get('/backoffice/product', [BackOfficeController::class,'backofficeproduct']);
+
