@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\categorie;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -21,11 +22,29 @@ class BackOfficeController extends Controller
     public function index() { }
 
     public function create() {
-        $products=Product::all();
-        return view('backofficecreate',['products'=>$products]);
+        $categorie=categorie::all();
+        return view('backofficecreate',['categorie'=>$categorie]);
     }
 
-    public function store(Request $request) { }
+    public function store(Request $request)
+    {
+//        $product = new Product();
+//
+//        $product->name = $request->input('name');
+        Product::create(
+             [
+                'name' => $request->input('name'),
+                'price' => $request->input('price'),
+                'weight' => $request->input('weight'),
+                'discount' => $request->input('discount'),
+                'picture_url' => $request->input('picture_url'),
+                'description' => $request->input('description'),
+                'quantity' => $request->input('quantity'),
+                'category_id' => $request->input('category_id'),
+
+        ]);
+        return redirect()->route('products');
+    }
 
     public function show(Product $product) {
         return view('backofficeproductedit',['product' => $product]);

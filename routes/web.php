@@ -47,8 +47,9 @@ Route::get('/cart', [CartController::class,'cart']);
 //Redirect::action('PageController@about');
 //Config::get('app.aliases.Cookie');
 
-Route::get('/backoffice', [BackOfficeController::class,'backoffice']);
+Route::get('/backoffice', [BackOfficeController::class,'backoffice'])->name('products');
 Route::get('/backoffice/create', [BackOfficeController::class,'create']);
+Route::post('/backoffice/create',[BackOfficeController::class,'store'])->name('product.create');
 Route::get('/backoffice/product/{id}/edit', [BackOfficeController::class,'backofficeproductedit']);
 //Route::get('/backoffice/product', [BackOfficeController::class,'backofficeproduct']);
 
