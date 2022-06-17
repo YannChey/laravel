@@ -15,8 +15,6 @@
 </head>
 <body>
 <header>
-
-
     <nav class="navbar navbar-expand-lg bg-dark">
         <div class="container">
             <img class="logo" src="{{asset('img/Monkeys_and_Bananas.png')}}">

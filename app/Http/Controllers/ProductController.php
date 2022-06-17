@@ -35,24 +35,27 @@ class ProductController extends Controller
 //            ],
 //        ];
 
-    public function products()
+    public function products(Request $request)
     {
         $products=Product::all();
+        if($request->has('sort')){
+            $products=$products->sortBy($request->input('sort'));
+        }
         return view('product-list',['products' => $products]);
     }
 
-    public function productsSortByName()
-    {
-//        $products=Product::orderBy('name')->get();
-        $products=Product::all()->sortBy('name');
-        return view('product-list',['products' => $products]);
-    }
-
-    public function productsSortByPrice()
-    {
-        $products=Product::all()->sortBy('price');
-        return view('product-list',['products' => $products]);
-    }
+//    public function productsSortByName()
+//    {
+////        $products=Product::orderBy('name')->get();
+//        $products=Product::all()->sortBy('name');
+//        return view('product-list',['products' => $products]);
+//    }
+//
+//    public function productsSortByPrice()
+//    {
+//        $products=Product::all()->sortBy('price');
+//        return view('product-list',['products' => $products]);
+//    }
 
     public function show(Product $product)
     {
