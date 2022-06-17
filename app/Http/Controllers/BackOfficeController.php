@@ -11,6 +11,9 @@ class BackOfficeController extends Controller
     public function backoffice()
     {
         $products = Product::all();
+//        $category=categorie::find(1);
+//        dd($category->products);
+//        dd($products->first()->category);
         return view('backoffice', ['products' => $products]);
     }
 

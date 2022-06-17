@@ -97,6 +97,7 @@ input, select{
 .logo{
     max-height: 150px;
     margin-right:100px;
+    margin-bottom:0px;
 }
 
 .container{
