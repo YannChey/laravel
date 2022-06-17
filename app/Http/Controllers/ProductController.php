@@ -38,13 +38,16 @@ class ProductController extends Controller
     public function products()
     {
         $products = \DB::select('SELECT * FROM products');
-        dd($products);
-
-        return view('product-list',['products' => $products[$products]]);
+        // @dd($products);
+        
+        return view('product-list',['products' => $products]);
     }
 
-    public function id(int $key)
+    public function id($id)
     {
-        return view('product-details', ['product' => $this->products[$key]]);
+        $product_detail = \DB::select('SELECT * FROM products WHERE idproducts = :id', ['id' => $id]);
+        // @dd($product_detail);
+        return view('product-details', ['product'=>$product_detail[0]]);
+        // return view('product-details', ['product' => $products[$key]]);
     }
 }
