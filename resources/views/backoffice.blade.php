@@ -2,35 +2,37 @@
 
 @section('content')
 
+
+
     <div class="container">
-        <table class="table table-responsive table-bordered">
-            <thead>
-            <a type="button" href="/backoffice/create" class="btn btn-outline-warning">Ajouter un article</a>
-            </thead>
+        <h2 style="text-align: center">Mes produits</h2>
+    <a type="button" href="/backoffice/create" class="btn btn-outline-warning">Ajouter un article</a>
+    </div>
+    <div class="container">
+        <table class="table table-bordered">
             <thead>
             <tr>
-                <th scope="col">Actions</th>
-                <th scope="col">id</th>
-                <th scope="col">name</th>
-                <th scope="col">price</th>
+                <th>Actions</th>
+                <th>name</th>
+                <th>price</th>
                 {{--        <th scope="col">discount</th>--}}
                 {{--        <th scope="col">weight</th>--}}
                 {{--        <th scope="col">quantity</th>--}}
-                <th scope="col">category</th>
-                <th scope="col">display</th>
+                <th>category</th>
+                <th>display</th>
             </tr>
             </thead>
             @foreach($products as $product)
                 <tbody>
                 <tr>
                     <td style="display:flex">
-                        <a style="margin-right:20px" type="button" class="btn btn-outline-warning">Modifier</a>
-                        <form class="btn-outline-warning" action="/backoffice" method="delete"
-                        {{ csrf_field() }}
-                        <button type="submit" class="btn btn-outline-warning">Supprimer</button>
+                        <a style="margin-right:20px" type="button" href="{{route('product.edit',['product'=>$product])}}" class="btn btn-outline-warning">Modifier</a>
+                        <form class="btn-outline-warning" action="{{route('product.delete',['product'=>$product])}}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-outline-danger">Supprimer</button>
                         </form>
                     </td>
-                    <td>{{$product->id}}</td>
                     <td>{{$product->name}}</td>
                     <td>{{$product->price}}</td>
                     <td>{{$product->category_id}}</td>

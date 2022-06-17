@@ -30,7 +30,7 @@
         </div>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">quantity</label>
-            <input type="number" name="quantity" min="1" max="2000">
+            <input type="number" name="quantity" min="0" max="2000">
         </div>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Catégorie</label>

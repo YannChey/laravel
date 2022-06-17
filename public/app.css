@@ -124,3 +124,8 @@ button.btn:hover{
     border-color:orange;
     background-color:orange;
 }
+
+.table-bordered{
+    margin-left:0px;
+    margin-top:20px;
+}

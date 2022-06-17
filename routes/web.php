@@ -50,6 +50,9 @@ Route::get('/cart', [CartController::class,'cart']);
 Route::get('/backoffice', [BackOfficeController::class,'backoffice'])->name('products');
 Route::get('/backoffice/create', [BackOfficeController::class,'create']);
 Route::post('/backoffice/create',[BackOfficeController::class,'store'])->name('product.create');
-Route::get('/backoffice/product/{id}/edit', [BackOfficeController::class,'backofficeproductedit']);
+Route::get('/backoffice/product/{product}/edit', [BackOfficeController::class,'edit'])->name('product.edit');
+Route::post('/backoffice/product/{product}/edit', [BackOfficeController::class,'update'])->name('product.update');
+Route::delete('/backoffice/{product}',[BackOfficeController::class,'destroy'])->name('product.delete');
 //Route::get('/backoffice/product', [BackOfficeController::class,'backofficeproduct']);
 
+//Route::resource('products',ProductController::class);
