@@ -2,6 +2,9 @@
 
 @section('content')
     <h1>Liste des produits</h1>
+    
+    <a href=""><p>trie par prix</p></a>
+    <a href=""><p>trie par nom</p></a>
     <div class="main">
         @foreach($products as $product)
             <div class="texte">
