@@ -33,7 +33,7 @@ Route::get('/product',[ProductController::class,'products']);
 //    return 'Fiche du produit '. $id;
 //});
 
-Route::get('/product/{key}', [ProductController::class,'id']);
+Route::get('/product/{id}', [ProductController::class,'id']);
 
 //Route::get('/cart', function () {
 //    return 'Panier';

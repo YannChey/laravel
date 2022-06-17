@@ -15,8 +15,9 @@ class ProductController extends Controller
         return view('product-list',['products' => $products]);
     }
 
-    public function id(int $key)
+    public function id(int$id)
     {
-        return view('product-details', ['product' => $this->products[$key]]);
+        $product_details = \DB::select('SELECT * FROM products WHERE id = ?', [$id]);
+        return view('product-details', ['product' => $product_details[0]]);
     }
 }
