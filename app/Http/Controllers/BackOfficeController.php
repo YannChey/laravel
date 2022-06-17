@@ -89,4 +89,10 @@ class BackOfficeController extends Controller
         return redirect()->route('products')
             ->with('success','Product deleted successfully');
     }
+
+    public function showcategories(){
+        $products=Product::all();
+        $categories=categorie::all();
+        return view('listingproductsbycategories',['products'=>$products,'categories'=>$categories]);
+    }
 }

@@ -55,4 +55,4 @@ Route::post('/backoffice/product/{product}/edit', [BackOfficeController::class,'
 Route::delete('/backoffice/{product}',[BackOfficeController::class,'destroy'])->name('product.delete');
 //Route::get('/backoffice/product', [BackOfficeController::class,'backofficeproduct']);
 
-//Route::resource('products',ProductController::class);
+Route::get('/backoffice/categories',[BackOfficeController::class,'showcategories'])->name('products.category');
