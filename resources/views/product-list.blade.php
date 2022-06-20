@@ -14,7 +14,7 @@
     <div class="main container row row-cols-1 row-cols-sm-3 row-cols-md-3 g-4">
         @foreach($products as $key => $product)
             <div class="texte">
-                <a href="product/{{$product->id}}"><img src="{{$product->picture_url}}" alt="product_image"></a>
+                <img src="{{$product->picture_url}}" alt="product_image">
                 <p>{{$product->name}}</p>
                 <p>Prix : {{$product->price}} €</p>
                 <p>Poids : {{$product->weight}} g</p>
@@ -24,7 +24,7 @@
                     @else
                         Prix final : {{$product->price}} €
                     @endif</p>
-                <button class="btn btn-outline-warning">Commander</button>
+                <a href="product/{{$product->id}}"><button class="btn btn-outline-warning">Accéder au détail de l'article</button></a>
             </div>
         @endforeach
 

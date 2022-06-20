@@ -29,8 +29,8 @@ Route::get('/',[HomeController::class,'start']);
 //});
 
 Route::get('/product',[ProductController::class,'products']);
-Route::get('/productName',[ProductController::class,'productsSortByName']);
-Route::get('/productPrice',[ProductController::class,'productsSortByPrice']);
+//Route::get('/productName',[ProductController::class,'productsSortByName']);
+//Route::get('/productPrice',[ProductController::class,'productsSortByPrice']);
 
 //Route::get('/product/{id}', function (int $id) {
 //    return 'Fiche du produit '. $id;
@@ -41,13 +41,13 @@ Route::get('/product/{product}', [ProductController::class,'show']);
 //Route::get('/cart', function () {
 //    return 'Panier';
 //});
-
-Route::get('/cart', [CartController::class,'cart']);
+Route::get('/cart',[CartController::class,'nothing']);
+Route::post('/panier/{product}', [CartController::class,'cart'])->name('cart');
 
 //Redirect::action('PageController@about');
 //Config::get('app.aliases.Cookie');
 
-Route::get('/backoffice', [BackOfficeController::class,'backoffice'])->name('products');
+Route::get('/backoffice', [BackOfficeController::class,'index'])->name('products');
 Route::get('/backoffice/create', [BackOfficeController::class,'create']);
 Route::post('/backoffice/create',[BackOfficeController::class,'store'])->name('product.create');
 Route::get('/backoffice/product/{product}/edit', [BackOfficeController::class,'edit'])->name('product.edit');

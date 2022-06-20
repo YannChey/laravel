@@ -8,31 +8,17 @@ use Illuminate\Http\Request;
 
 class BackOfficeController extends Controller
 {
-    public function backoffice()
+    public function index()
     {
         $products = Product::all();
 //        $category=categorie::find(1);
-//        dd($category->products);
-//        dd($products->first()->category);
-        return view('backoffice', ['products' => $products]);
-    }
-
-    public function backofficeproduct()
-    {
-        return view('backofficeproduct');
-    }
-//    public function backofficeproductedit(Product $product){
-//        return view('backofficeproductedit',['product' => $product]);
-//    }
-
-    public function index()
-    {
+        return view('backoffice.backoffice', ['products' => $products]);
     }
 
     public function create()
     {
         $categorie = categorie::all();
-        return view('backofficecreate', ['categorie' => $categorie]);
+        return view('backoffice.backoffice-create', ['categorie' => $categorie]);
     }
 
     public function store(Request $request)
@@ -63,7 +49,7 @@ class BackOfficeController extends Controller
     public function edit(Product $product)
     {
         $categorie = Categorie::all();
-        return view('backofficeedit',['product'=>$product,'categorie'=>$categorie]);
+        return view('backoffice.backoffice-edit',['product'=>$product,'categorie'=>$categorie]);
     }
 
     public function update(Request $request, Product $product)
@@ -93,6 +79,6 @@ class BackOfficeController extends Controller
     public function showcategories(){
         $products=Product::all();
         $categories=categorie::all();
-        return view('listingproductsbycategories',['products'=>$products,'categories'=>$categories]);
+        return view('backoffice.listing-products-by-categories',['products'=>$products,'categories'=>$categories]);
     }
 }
