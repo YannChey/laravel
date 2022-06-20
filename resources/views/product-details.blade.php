@@ -18,7 +18,7 @@
             <form action="{{route('cart',$product)}}" method="POST">
                 @csrf
                 <label for="num">Quantité : </label>
-                <input type="number" name="quantity" min="1" max="20" required><br><br>
+                <input type="number" name="wanted_quantity" min="1" max="20" required><br><br>
                 <button type="submit" class="btn btn-outline-warning">Commander</button>
                 </a>
             </form>

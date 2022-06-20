@@ -12,7 +12,7 @@ class CartController extends Controller
     }
 
     public function cart(Product $product, Request $request){
-        $product->quantity = $request->input('quantity');
+        $product->wanted_quantity = $request->input('wanted_quantity');
         $product->save();
         return view('cart',['product'=>$product]);
     }
