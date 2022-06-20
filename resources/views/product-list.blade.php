@@ -1,9 +1,15 @@
 @extends('layout')
 
 @section('content')
-    ²
+
     <main class="container">
         <h1>Liste des produits</h1>
+
+
+        <a href=""><p>Trier par nom</p></a>
+        <a href=""><p>Trier par prix</p></a>
+
+
 
         <div class="main d-flex flex-column row-cols-1">
             @foreach($products as $product)
