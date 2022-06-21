@@ -2,22 +2,28 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Product;
+
 
 class ProductController extends Controller
 {
 
     public function products()
     {
-        $products = \DB::select('SELECT * FROM products');
-//        dd($products);
-//kikou
+//        $products = \DB::select('SELECT * FROM products');
+        $products = Product::all();
+
+        dd($products);
+
         return view('product-list',['products' => $products]);
     }
 
-    public function id(int$id)
+    public function id(Product $product)
     {
-        $product_details = \DB::select('SELECT * FROM products WHERE id = ?', [$id]);
-        return view('product-details', ['product' => $product_details[0]]);
+
+//        $product_details = \DB::select('SELECT * FROM products WHERE id = ?', [$id]);
+//        $product_details = Product::find($id);
+
+        return view('product-details', ['product' => $product]);
     }
 }
