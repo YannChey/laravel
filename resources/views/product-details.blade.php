@@ -15,8 +15,17 @@
                 @else
                     Prix après remise : {{$product->price}} €
                 @endif</p>
-            <form action="{{route('cart',$product)}}" method="POST">
+            <form action="{{route('cart',['product'=>$product])}}" method="POST">
                 @csrf
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <label for="num">Quantité : </label>
                 <input type="number" name="wanted_quantity" min="1" max="20" required><br><br>
                 <button type="submit" class="btn btn-outline-warning">Commander</button>

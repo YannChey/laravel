@@ -41,8 +41,10 @@ Route::get('/product/{product}', [ProductController::class,'show']);
 //Route::get('/cart', function () {
 //    return 'Panier';
 //});
-Route::get('/cart',[CartController::class,'nothing']);
+
+Route::post('/panier',[CartController::class, 'getCart'])->name('cart.create');
 Route::post('/panier/{product}', [CartController::class,'cart'])->name('cart');
+
 
 //Redirect::action('PageController@about');
 //Config::get('app.aliases.Cookie');
