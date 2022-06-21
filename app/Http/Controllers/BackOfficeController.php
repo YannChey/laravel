@@ -26,6 +26,14 @@ class BackOfficeController extends Controller
 //        $product = new Product();
 //
 //        $product->name = $request->input('name');
+        $request->validate([
+            'name'=>'bail|required|alpha',
+            'price'=>'bail|int|required|min:0',
+            'weight'=>'bail|int|min:0',
+            'discount'=>'bail|int|min:0',
+            'quantity'=>'bail|int|required|min:1',
+            'picture_url'=>'bail|alpha',
+        ]);
         Product::create(
             [
                 'name' => $request->input('name'),
