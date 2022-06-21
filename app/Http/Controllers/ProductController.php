@@ -11,7 +11,7 @@ class ProductController extends Controller
     {
         $products = \DB::select('SELECT * FROM products');
 //        dd($products);
-
+//kikou
         return view('product-list',['products' => $products]);
     }
 
