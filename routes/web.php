@@ -29,6 +29,10 @@ Route::get('/',[HomeController::class,'start']);
 
 Route::get('/product',[ProductController::class,'products']);
 
+Route::get('/product/name',[ProductController::class,'nameOrder']);
+
+Route::get('/product/price',[ProductController::class,'priceOrder']);
+
 //Route::get('/product/{id}', function (int $id) {
 //    return 'Fiche du produit '. $id;
 //});

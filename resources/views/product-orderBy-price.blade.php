@@ -1,10 +1,7 @@
 @extends('layout')
 
 @section('content')
-    <h1>Liste des produits</h1>
-    
-    <a href="product/price"><p>trie par prix</p></a>
-    <a href="product/name"><p>trie par nom</p></a>
+    <h1>Liste des produits par prix</h1>
     <div class="main">
         @foreach($products as $product)
             <div class="texte">
