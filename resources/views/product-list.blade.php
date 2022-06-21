@@ -33,9 +33,10 @@
                             {{--                            <p>Prix TTC: {{formatPrice($product->price)}}</p>--}}
                             {{--                            <p>Prix--}}
                             {{--                                HT: {{formatPrice(priceExcludingVAT($product->price))}}</p>--}}
-                            {{$product->discount !== null}}
+                            @if($product->discount !== 0)
 
                             <p>Discount : {{$product->discount}} %</p>
+                            @endif
                             <p>Prix promo
                                 {{--                                : {{formatPrice(discountedPrice($product->price, $product->discount))}} </p>--}}
                                 : {{$product->price, $product->discount}} </p>
