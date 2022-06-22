@@ -13,7 +13,7 @@ class ProductController extends Controller
 //        $products = \DB::select('SELECT * FROM products');
         $products = Product::all();
 
-        dd($products);
+//        dd($products);
 
         return view('product-list',['products' => $products]);
     }
@@ -25,5 +25,17 @@ class ProductController extends Controller
 //        $product_details = Product::find($id);
 
         return view('product-details', ['product' => $product]);
+    }
+
+    public function productsPriceSort()
+    {
+        $products = Product::all('products')
+            ->orderBy('price')
+            ->get();
+
+
+//        dd($products);
+
+        return view('product-list',['products' => $products]);
     }
 }

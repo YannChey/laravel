@@ -18,9 +18,9 @@
 
                     <div class="col-4 ">
 
-                        <img src="{{$product->img_url}} "
+                        <a href="product/{{$product->id}}"><img src="{{$product->img_url}} "
                              class=" img-fluid rounded-circle border-primary ms-2 mt-1"
-                             alt="{{'photo de ' . $product->name}} ">
+                             alt="{{'photo de ' . $product->name}} "></a>
 
                         <h3 class="card-title text-center fw-bold ms-3 ">
                             {{$product->name}} </h3>
