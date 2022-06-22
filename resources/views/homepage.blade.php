@@ -1,6 +1,5 @@
 @extends('layout')
 
-
 @section('content')
 <div class="texte">
     <h1>Singerie</h1>
