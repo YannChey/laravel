@@ -3,17 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
-
+use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
 
-    public function products()
+    public function products(Request $request)
     {
 //        $products = \DB::select('SELECT * FROM products');
         $products = Product::all();
+if ($request -> has ('sort')){
+    $products = $products ->sortBy ($request -> input('sort'));
+}
 
-//        dd($products);
+
 
         return view('product-list',['products' => $products]);
     }
@@ -27,15 +30,5 @@ class ProductController extends Controller
         return view('product-details', ['product' => $product]);
     }
 
-    public function productsPriceSort()
-    {
-        $products = Product::all('products')
-            ->orderBy('price')
-            ->get();
 
-
-//        dd($products);
-
-        return view('product-list',['products' => $products]);
-    }
 }

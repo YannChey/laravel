@@ -6,9 +6,14 @@
         <h1>Liste des produits</h1>
 
 
-        <a href=""><p>Trier par nom</p></a>
-        <a href=""><p>Trier par prix</p></a>
 
+        <form method="get" action="/product">
+            <select name="sort" id="sort-select">
+                <option name="name" value="name">Trier par Nom</option>
+                <option name="price" value="price">Trier par prix</option>
+            </select>
+            <button type="submit" class="btn btn-outline-warning">Trier</button>
+        </form>
 
 
         <div class="main d-flex flex-column row-cols-1">
