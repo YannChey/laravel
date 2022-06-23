@@ -9,10 +9,11 @@ use App\Models\name;
 use Illuminate\Support\Facades\DB;
 
 
+
 class ProductController extends Controller
 {
 
-    public function products()
+    public function products(Request $request)
     {
 
         // $products = Products::all();
