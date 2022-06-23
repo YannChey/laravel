@@ -13,7 +13,11 @@
                 <p>{{$product->name}}</p>
                 <p>{{$product->price}} €</p>
                 <p>{{$product->weight}} g</p>
+                
+                @if($product->discount > 0)
                 <p>{{$product->discount}} %</p>
+                @endif
+                
             </div>
         @endforeach
     </div>

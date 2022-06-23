@@ -26,7 +26,7 @@ class ProductController extends Controller
     public function priceOrder()
     {
         // $price = Products::all();
-        $price = App\Models\::select()->orderBy('name')->get();
+        $price = Products::select()->orderBy('price')->get();
         // $products = \DB::select('SELECT * FROM products');
         // @dd($products);
         
@@ -37,7 +37,7 @@ class ProductController extends Controller
     public function nameOrder()
     {
 
-        $name = name::orderBy('name');
+        $name = Products::select()->orderBy('name')->get();
         // $products = \DB::select('SELECT * FROM products');
         // @dd($products);
         
