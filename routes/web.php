@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CategoriesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,3 +44,13 @@ Route::get('/cart', [CartController::class,'cart']);
 
 //Redirect::action('PageController@about');
 //Config::get('app.aliases.Cookie');
+
+Route::get('/backoffice', [\App\Http\Controllers\BackOfficeController::class,'backoffice']);
+
+Route::get('/backoffice/create', [\App\Http\Controllers\BackOfficeController::class,'create']);
+
+Route::post('/backoffice', [\App\Http\Controllers\BackOfficeController::class,'store']);
+
+Route::GET('/backoffice/{id}/edit', [\App\Http\Controllers\BackOfficeController::class,'edit']);
+
+Route::PUT('/backoffice/{id}', [\App\Http\Controllers\BackOfficeController::class,'update']);

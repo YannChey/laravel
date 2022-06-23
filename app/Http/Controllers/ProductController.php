@@ -15,9 +15,6 @@ class ProductController extends Controller
 if ($request -> has ('sort')){
     $products = $products ->sortBy ($request -> input('sort'));
 }
-
-
-
         return view('product-list',['products' => $products]);
     }
 

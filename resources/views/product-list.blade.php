@@ -6,7 +6,6 @@
         <h1>Liste des produits</h1>
 
 
-
         <form method="get" action="/product">
             <select name="sort" id="sort-select">
                 <option name="name" value="name">Trier par Nom</option>
@@ -24,8 +23,8 @@
                     <div class="col-4 ">
 
                         <a href="product/{{$product->id}}"><img src="{{$product->img_url}} "
-                             class=" img-fluid rounded-circle border-primary ms-2 mt-1"
-                             alt="{{'photo de ' . $product->name}} "></a>
+                                                                class=" img-fluid rounded-circle border-primary ms-2 mt-1"
+                                                                alt="{{'photo de ' . $product->name}} "></a>
 
                         <h3 class="card-title text-center fw-bold ms-3 ">
                             {{$product->name}} </h3>
@@ -35,15 +34,15 @@
                         <div class="card-body">
                             <p class="card-text text-center text-white">
                             <p>Prix TTC: {{$product->price}}</p>
-                            {{--                            <p>Prix TTC: {{formatPrice($product->price)}}</p>--}}
-                            {{--                            <p>Prix--}}
-                            {{--                                HT: {{formatPrice(priceExcludingVAT($product->price))}}</p>--}}
+                            {{--<p>Prix TTC: {{formatPrice($product->price)}}</p>--}}
+                            {{--<p>Prix--}}
+                            {{--HT: {{formatPrice(priceExcludingVAT($product->price))}}</p>--}}
                             @if($product->discount !== 0)
 
-                            <p>Discount : {{$product->discount}} %</p>
+                                <p>Discount : {{$product->discount}} %</p>
                             @endif
                             <p>Prix promo
-                                {{--                                : {{formatPrice(discountedPrice($product->price, $product->discount))}} </p>--}}
+                                {{--: {{formatPrice(discountedPrice($product->price, $product->discount))}} </p>--}}
                                 : {{$product->price, $product->discount}} </p>
                             <label for="{{$product->name}}">Qté:</label>
                             <input type="number" id="{{$product->name}}" min="0"
