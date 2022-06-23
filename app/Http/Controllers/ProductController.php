@@ -15,9 +15,9 @@ class ProductController extends Controller
     public function products()
     {
 
-        $products = Products::all();
+        // $products = Products::all();
         
-        // $products = \DB::select('SELECT * FROM products');
+        $products = DB::select('SELECT * FROM products');
         // @dd($products);
         
         return view('product-list',['products' => $products]);
