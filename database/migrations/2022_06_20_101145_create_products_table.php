@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('img_url');
             $table->integer('quantity_stock');
             $table->tinyInteger('available');
-            $table->integer('categories_id');
+            $table->integer('category_id');
             $table->tinyInteger('discount');
         });
     }

@@ -12,8 +12,8 @@ use App\Http\Controllers\CategoriesController;
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
+| routes are loaded by the RouteServiceProvproducter within a group which
+| contains the "web" mproductdleware group. Now create something great!
 |
 */
 
@@ -28,13 +28,13 @@ Route::get('/',[HomeController::class,'start']);
 //    return 'Liste des produits';
 //});
 
-Route::get('/product',[ProductController::class,'products']);
+Route::get('/product',[ProductController::class,'products'])->name('product.index');
 
-//Route::get('/product/{id}', function (int $id) {
-//    return 'Fiche du produit '. $id;
+//Route::get('/product/{product}', function (int $product) {
+//    return 'Fiche du produit '. $product;
 //});
 
-Route::get('/product/{product}', [ProductController::class,'id']);
+Route::get('/product/{product}', [ProductController::class,'show'])->name('product.show');
 
 //Route::get('/cart', function () {
 //    return 'Panier';
@@ -45,12 +45,16 @@ Route::get('/cart', [CartController::class,'cart']);
 //Redirect::action('PageController@about');
 //Config::get('app.aliases.Cookie');
 
-Route::get('/backoffice', [\App\Http\Controllers\BackOfficeController::class,'backoffice']);
+Route::get('/backoffice', [\App\Http\Controllers\BackOfficeController::class,'backoffice'])->name('backoffice.index');
 
-Route::get('/backoffice/create', [\App\Http\Controllers\BackOfficeController::class,'create']);
+Route::get('/backoffice/create', [\App\Http\Controllers\BackOfficeController::class,'create'])->name('backoffice.create');
 
-Route::post('/backoffice', [\App\Http\Controllers\BackOfficeController::class,'store']);
+Route::post('/backoffice', [\App\Http\Controllers\BackOfficeController::class,'store'])->name('backoffice.store');
 
-Route::GET('/backoffice/{id}/edit', [\App\Http\Controllers\BackOfficeController::class,'edit']);
+Route::GET('/backoffice/{product}/edit', [\App\Http\Controllers\BackOfficeController::class,'edit'])->name('backoffice.edit');
 
-Route::PUT('/backoffice/{id}', [\App\Http\Controllers\BackOfficeController::class,'update']);
+Route::PUT('/backoffice/{product}', [\App\Http\Controllers\BackOfficeController::class,'update'])->name('backoffice.update');
+
+Route::DELETE('/backoffice/{product}', [\App\Http\Controllers\BackOfficeController::class,'destroy'])->name('backoffice.destroy');
+
+Route::get('/categorie', [\App\Http\Controllers\CategoriesController::class,'index'])->name('categorie.index');

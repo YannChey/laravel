@@ -6,7 +6,7 @@
         <h1>Liste des produits</h1>
 
 
-        <form method="get" action="/product">
+        <form method="get" action="{{route('product.show')}}">
             <select name="sort" id="sort-select">
                 <option name="name" value="name">Trier par Nom</option>
                 <option name="price" value="price">Trier par prix</option>
@@ -22,9 +22,10 @@
 
                     <div class="col-4 ">
 
-                        <a href="product/{{$product->id}}"><img src="{{$product->img_url}} "
-                                                                class=" img-fluid rounded-circle border-primary ms-2 mt-1"
-                                                                alt="{{'photo de ' . $product->name}} "></a>
+                        <a href="product/{{$product->id}}">
+                            <img src="{{$product->img_url}} "
+                                 class=" img-fluid rounded-circle border-primary ms-2 mt-1"
+                                 alt="{{'photo de ' . $product->name}} "></a>
 
                         <h3 class="card-title text-center fw-bold ms-3 ">
                             {{$product->name}} </h3>

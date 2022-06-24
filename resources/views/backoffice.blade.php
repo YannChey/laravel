@@ -7,7 +7,7 @@
 
 
 
-        <a href="/backoffice/create">
+        <a href="{{route('backoffice.create')}}">
             <button type="submit" class="btn btn-outline-warning">Créer un produit</button>
         </a>
 
@@ -18,7 +18,7 @@
 
                     <div class="col-4 ">
 
-                        <a href="/backoffice/{{$product->id}}/edit">
+                        <a href="{{route('backoffice.edit',$product)}}">
                             <img src="{{$product->img_url}} "
                                  class=" img-fluid rounded-circle border-primary ms-2 mt-1"
                                  alt="{{'photo de ' . $product->name}} "></a>

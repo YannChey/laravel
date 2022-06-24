@@ -11,8 +11,19 @@
                 <h2 class="panel-title">Entrer nouveau produit</h2>
             </div>
             <div class="panel-body">
-                <form class="" action="/backoffice" method="post">
+                <form class="" action="{{route('backoffice.index')}}" method="post">
                     {{ csrf_field() }}
+
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
                     <div class="form-group">
                         <label for="reference">Réference</label>
                         <input type="text" class="form-control" name="reference" id="reference" placeholder="reference">
@@ -44,8 +55,8 @@
                     <div class="form-group">
                         <label for="available">Disponible?</label>
                         <select name="available" id="available" class="form-control">
-                            <option value="oui">oui</option>
-                            <option value="non">non</option>
+                            <option value="1">oui</option>
+                            <option value="0">non</option>
                         </select>
                     </div>
                     <div class="form-group">

@@ -2,13 +2,27 @@
 
 @section('content')
 
-    @foreach($categories as $cat)
-        {{$cat->name}}
-        @foreach($products as $product)
-            @if($cat->id===$product->categorie)
-                {{$product->categories}}
-            @endif
-        @endforeach
-    @endforeach
+    <div class="container">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>Categorie</th>
+                <td>Produit</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                @foreach($categories as $category)
+                    <th>{{$category->name}}</th>
+                    @foreach($category->products as $product)
+                       <td>{{$product->name}}</td>
+                       <td>{{$product->name}}</td>
+                    @endforeach
+                @endforeach
+            </tr>
+            </tbody>
+
+        </table>
+    </div>
 
 @endsection

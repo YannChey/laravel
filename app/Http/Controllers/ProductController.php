@@ -18,7 +18,7 @@ if ($request -> has ('sort')){
         return view('product-list',['products' => $products]);
     }
 
-    public function id(Product $product)
+    public function show(Product $product)
     {
 
 //        $product_details = \DB::select('SELECT * FROM products WHERE id = ?', [$id]);
