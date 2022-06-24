@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\backoffController;
+use App\Http\Controllers\BackofficeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,15 +50,10 @@ Route::get('/product/{id}', [ProductController::class,'id']);
 //Redirect::action('PageController@about');
 //Config::get('app.aliases.Cookie');
 
-Route::get('/backoffice', [backofficeClass::class,'backoffice']);
-
-
-// Route::get('/backoffice/create', [BackOfficeController::class,'create']);
-// Route::post('/backoffice/create',[BackOfficeController::class,'store'])->name('product.create');
-// Route::get('/backoffice/product/{product}/edit', [BackOfficeController::class,'edit'])->name('product.edit');
-// Route::put('/backoffice/product/{product}/edit', [BackOfficeController::class,'update'])->name('product.update');
-// Route::delete('/backoffice/{product}',[BackOfficeController::class,'destroy'])->name('product.delete');
-// //Route::get('/backoffice/product', [BackOfficeController::class,'backofficeproduct']);
-
-// Route::get('/backoffice/categories',[BackOfficeController::class,'showcategories'])->name('products.category');
-// Route::get('/backoffice/orders',[BackOfficeController::class,'showorders'])->name('orders');
+Route::get('/backoffice', [BackofficeController::class,'index'])->name('backoffice.index');
+// Route::get('/backoffice/{product}', [BackofficeController::class,'show']);
+// Route::get('/backoffice/create', [BackofficeController::class,'create']);
+// Route::post('/backoffice', [BackofficeController::class,'store']);
+Route::get('/backoffice/{product}/edit', [BackofficeController::class,'edit']);
+Route::put('/backoffice/{product}/update', [BackofficeController::class,'update'])->name('backoffice.update');
+// Route::delete('/backoffice/{product}', [BackofficeController::class,'destroy']);

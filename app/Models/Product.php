@@ -15,7 +15,7 @@ class Product extends Model
         'weight',
         'discount',
         'picture_url',
-        'description',
+        'deqcription',
         'quantity',
         'category_id'
     ];
