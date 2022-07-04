@@ -36,10 +36,17 @@ class BackofficeController extends Controller
 
     public function update(Request $request, Product $product)
     {   
-    // dd($request->all());
-    // dd($product);
-    $product->update($request->all());
+        $verification = $request->validate([
+            'name' => 'required|string|max:20',
+            'deqcription_main' => 'required|string',
+            'url_image' => 'required|string',
+            'price' => 'required|integer|min:100',
+            'available' => 'required|integer|min:0',
+            'quantity' => 'required|integer|min:0',
+        ]);
+    $product->update($verification);
     $product->save();
+
     return redirect()->route('backoffice.index');
     }
 }

@@ -4,8 +4,7 @@
     <h1 class="text-center py-4">Edit Product</h1>
     <div class="container py-4">
         <div class="row g-5">
-            <form class="needs-validation" method="post"
-                  action="{{ route('backoffice.update', ["product" => $product] )}}">
+            <form class="needs-validation" method="post" action="{{ route('backoffice.update', ["product" => $product] )}}">
                 @method('PUT')
                 @csrf
                 <div class="row g-3">
