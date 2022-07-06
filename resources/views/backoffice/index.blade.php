@@ -2,7 +2,7 @@
 
 @section('content')
     <h1>Liste des produits</h1>
-    
+
     @foreach($products as $product)
     <div class="texte">
         
@@ -16,6 +16,10 @@
         <p>{{$product->discount}} %</p>
         @endif
         
+
+        <ul>
+            <li> texte</li>
+        </ul>
     </div>
 @endforeach
 @endsection

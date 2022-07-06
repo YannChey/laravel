@@ -2,14 +2,18 @@
 
 namespace App\Http\Controllers;
 use App\Models\Product;
+use App\Models\Categorie;
 use Illuminate\Http\Request;
 
+
 class BackofficeController extends Controller
+
 {
     public function index()
     {   
         $products = Product::all();
- 
+        $category = Categorie::find(1);
+        $products = $category->products;
         return view('backoffice.index',['products' => $products]);
     }
 
