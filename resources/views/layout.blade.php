@@ -29,7 +29,23 @@
                     <li class="nav-item">
                         <a class="nav-link" href="../cart">Panier</a>
                     </li>
-
+                    @if(Auth::user())
+                    <li class="nav-link"><form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <x-responsive-nav-link :href="route('logout')"
+                                               onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                            {{ __('Log Out') }}
+                        </x-responsive-nav-link>
+                    </form></li>
+                        @else
+                        <li>
+                            <a class="nav-link" href="{{route('login')}}">Login</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="{{route('register')}}">Sign-in</a>
+                        </li>
+                    @endif
                 </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

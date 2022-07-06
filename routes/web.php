@@ -17,6 +17,29 @@ use App\Http\Controllers\BackOfficeController;
 |
 */
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
 //Route::get('/', function () {
 //   return 'Homepage';
 //    //return view('welcome');
@@ -49,7 +72,7 @@ Route::post('/panier/{product}', [CartController::class,'cart'])->name('cart');
 //Redirect::action('PageController@about');
 //Config::get('app.aliases.Cookie');
 
-Route::get('/backoffice', [BackOfficeController::class,'index'])->name('products');
+Route::get('/backoffice', [BackOfficeController::class,'index'])->name('products')->middleware('auth');
 Route::get('/backoffice/create', [BackOfficeController::class,'create']);
 Route::post('/backoffice/create',[BackOfficeController::class,'store'])->name('product.create');
 Route::get('/backoffice/product/{product}/edit', [BackOfficeController::class,'edit'])->name('product.edit');

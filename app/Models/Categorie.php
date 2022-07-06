@@ -8,8 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Categorie extends Model
 {
     use HasFactory;
+
     public function products()
     {
         return $this->hasMany(Product::class,'category_id');
     }
+    protected $visible = ['name'];
 }
