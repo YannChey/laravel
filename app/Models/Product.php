@@ -17,7 +17,7 @@ class Product extends Model
         'picture_url',
         'deqcription',
         'quantity',
-        'category_id'
+        'category_id',
     ];
     public function category(){
         return $this->belongsTo(Categorie::class);
