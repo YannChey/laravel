@@ -38,7 +38,7 @@
                             <p>Poids : {{$product->weight}} g</p>
                             <p>Quantité en stock : {{$product->quantity_stock}} unités</p>
                             <p>Dispo (1=oui, 0=non) : {{$product->available}} </p>
-                            <p>Catégorie : {{$product->categories_id}}</p>
+                            <p>Catégorie : {{$product->category_id}}</p>
                             <p>Discount : {{$product->discount}} %</p>
                         </div>
                     </div>

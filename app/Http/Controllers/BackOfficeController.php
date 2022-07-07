@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class BackOfficeController extends Controller
 {
+//    private string $name = 'kikou!';
+//
+//    public function getName(){
+//        return $this->name;
+//    }
+
     public function backoffice()
     {
         $products = Product::all();

@@ -6,7 +6,7 @@
         <h1>Liste des produits</h1>
 
 
-        <form method="get" action="{{route('product.show')}}">
+        <form method="get" action="{{route('product.index')}}">
             <select name="sort" id="sort-select">
                 <option name="name" value="name">Trier par Nom</option>
                 <option name="price" value="price">Trier par prix</option>
@@ -14,9 +14,10 @@
             <button type="submit" class="btn btn-outline-warning">Trier</button>
         </form>
 
-
         <div class="main d-flex flex-column row-cols-1">
             @foreach($products as $product)
+
+
 
                 <div class="card my-3 align-items-center flex-row">
 

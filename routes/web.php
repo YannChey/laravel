@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoriesController;
+use App\Http\Validations\ValidationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,12 +30,12 @@ Route::get('/',[HomeController::class,'start']);
 //});
 
 Route::get('/product',[ProductController::class,'products'])->name('product.index');
+Route::get('/product/{product}', [ProductController::class,'show'])->name('product.show');
 
 //Route::get('/product/{product}', function (int $product) {
 //    return 'Fiche du produit '. $product;
 //});
 
-Route::get('/product/{product}', [ProductController::class,'show'])->name('product.show');
 
 //Route::get('/cart', function () {
 //    return 'Panier';
@@ -58,3 +59,5 @@ Route::PUT('/backoffice/{product}', [\App\Http\Controllers\BackOfficeController:
 Route::DELETE('/backoffice/{product}', [\App\Http\Controllers\BackOfficeController::class,'destroy'])->name('backoffice.destroy');
 
 Route::get('/categorie', [\App\Http\Controllers\CategoriesController::class,'index'])->name('categorie.index');
+
+Route::get( '/validations', [App\Validations\ValidationsController::class,'show'])->name('product_description.show');
